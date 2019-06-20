@@ -28,6 +28,10 @@ type Triangle struct {
 	Height float64
 }
 
+func (t Triangle) Area() float64 {
+	return 0
+}
+
 func Perimeter(rectangle Rectangle) float64 {
 	return 2 * (rectangle.Width + rectangle.Height)
 }
