@@ -1,4 +1,3 @@
 package wallet
 
-func main() {
-}
+type Wallet struct{}
