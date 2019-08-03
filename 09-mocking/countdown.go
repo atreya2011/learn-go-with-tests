@@ -12,6 +12,10 @@ const (
 	countdownStart = 3
 )
 
+type Sleeper interface {
+	Sleep()
+}
+
 func main() {
 	Countdown(os.Stdout)
 }
