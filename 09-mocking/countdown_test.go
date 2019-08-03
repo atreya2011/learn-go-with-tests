@@ -25,14 +25,6 @@ func (s *CountdownOperationsSpy) Write(p []byte) (n int, err error) {
 	return
 }
 
-type SpyTime struct {
-	durationSlept time.Duration
-}
-
-func (s *SpyTime) Sleep(duration time.Duration) {
-	s.durationSlept = duration
-}
-
 func TestCountdown(t *testing.T) {
 	t.Run("prints 3 to Go!", func(t *testing.T) {
 		buffer := &bytes.Buffer{}
@@ -69,6 +61,14 @@ Go!`
 			t.Errorf("wanted calls %v got %v", want, spySleepPrinter)
 		}
 	})
+}
+
+type SpyTime struct {
+	durationSlept time.Duration
+}
+
+func (s *SpyTime) Sleep(duration time.Duration) {
+	s.durationSlept = duration
 }
 
 func TestConfigurableSleeper(t *testing.T) {

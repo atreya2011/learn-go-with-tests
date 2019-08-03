@@ -27,6 +27,10 @@ type ConfigurableSleeper struct {
 	sleep    func(time.Duration)
 }
 
+func (c *ConfigurableSleeper) Sleep() {
+	c.sleep(c.duration)
+}
+
 func main() {
 	sleeper := &DefaultSleeper{}
 	Countdown(os.Stdout, sleeper)
