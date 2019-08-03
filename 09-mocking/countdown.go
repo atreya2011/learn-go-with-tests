@@ -1,5 +1,9 @@
 package main
 
+import "bytes"
+
 func main() {
-	Countdown()
+}
+
+func Countdown(out *bytes.Buffer) {
 }
